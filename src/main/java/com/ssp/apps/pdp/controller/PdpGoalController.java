@@ -42,7 +42,7 @@ public class PdpGoalController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deletePdpGoals(@PathVariable Integer id) {
+	public void deletePdpGoal(@PathVariable Integer id) {
 		pdpGoalService.deletePdpGoal(id);
 	}
 }
