@@ -1,0 +1,2 @@
+insert into pdp_goal (id, goal, target_date, is_completed) values (1001, 'java8', '2019-10-10 16:37:16.467', false);
+insert into pdp_goal (id, goal, target_date, is_completed) values (1002, 'Testing', '2019-10-10 16:37:16.467', false)
