@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,26 +18,29 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class PdpGoalEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Integer id;
 
-    private String goal;
-    private Date targetDate;
-    private boolean isCompleted;
+  private String goal;
+  private Date targetDate;
+  private boolean isCompleted;
 
-    public PdpGoalEntity(String goal, Date targetDate, boolean isCompleted) {
-        super();
-        this.goal = goal;
-        this.targetDate = targetDate;
-        this.isCompleted = isCompleted;
-    }
+  public PdpGoalEntity(String goal, Date targetDate, boolean isCompleted) {
+    super();
+    this.goal = goal;
+    this.targetDate = targetDate;
+    this.isCompleted = isCompleted;
+  }
 
-    public PdpGoalEntity(String goal) {
-        super();
-        this.goal = goal;
-        this.targetDate = new Date();
-    }
+  public PdpGoalEntity(String goal) {
+    this(goal, new Date(), false);
+  }
+
+  public PdpGoalEntity(Integer id, String goal) {
+    this(goal, new Date(), false);
+    this.id = id;
+  }
 
 
 }
