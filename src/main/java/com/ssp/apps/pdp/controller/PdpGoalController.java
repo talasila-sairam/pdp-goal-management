@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ssp.apps.pdp.entity.PdpGoalEntity;
 import com.ssp.apps.pdp.service.PdpGoalService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value = "PdpGoalController", description = "Endpoit to manage PDP Goals")
 @RequestMapping("/pdpgoal")
 public class PdpGoalController {
 
@@ -21,6 +25,7 @@ public class PdpGoalController {
 	private PdpGoalService pdpGoalService;
 
 	@GetMapping
+	@ApiOperation(value = "Get All PDP Goals", notes = "Returns all PDP goals in system")
 	public List<PdpGoalEntity> getAllPdpGoals() {
 		return pdpGoalService.getAllPdp();
 	}
